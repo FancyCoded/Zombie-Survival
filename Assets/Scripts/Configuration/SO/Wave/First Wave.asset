@@ -29,5 +29,5 @@ MonoBehaviour:
   _zombiePoliceCount: 0
   _zombieMaynardCount: 0
   _zombieSkeletonBossCount: 0
-  _zombieSpawnDelay: 1
+  _zombieSpawnDelay: 8
   _startDelay: 20
