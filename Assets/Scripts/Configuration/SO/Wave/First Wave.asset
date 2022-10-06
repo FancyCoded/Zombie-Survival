@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d124044219310147951c8dcabf3abf0, type: 3}
+  m_Name: First Wave
+  m_EditorClassIdentifier: 
+  _ammo556Count: 0
+  _ammo45Count: 3
+  _ammo762Count: 0
+  _aidKitCount: 1
+  _painkillerCount: 1
+  _bandageCount: 1
+  _energyDrinkCount: 1
+  _weaponAKMCount: 0
+  _weaponM4A4Count: 0
+  _weaponM4A1SCount: 0
+  _weaponColtCount: 0
+  _weaponKnifeCount: 1
+  _zombieRomeroCount: 20
+  _zombieGirlCount: 10
+  _zombiePoliceCount: 0
+  _zombieMaynardCount: 0
+  _zombieSkeletonBossCount: 0
+  _zombieSpawnDelay: 1
+  _startDelay: 20

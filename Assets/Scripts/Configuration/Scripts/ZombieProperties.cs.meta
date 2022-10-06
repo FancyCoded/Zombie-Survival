@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Item/Healer.cs.meta
+guid: ac00fbd7262ed2847aef874c420d12ec
+========
+guid: 8b4c28e0962b2bf4fb754bca55a905f5
+>>>>>>>> newInventory:Assets/Scripts/Configuration/Scripts/ZombieProperties.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

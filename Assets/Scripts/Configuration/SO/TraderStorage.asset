@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8767a195597c5104d9f99381ba539a81, type: 3}
+  m_Name: TraderStorage
+  m_EditorClassIdentifier: 
+  _items:
+  - {fileID: 11400000, guid: 1b4e50f658842ac4dbfe8c9d3c47a92f, type: 2}
+  - {fileID: 11400000, guid: e2f5641176fac2b40ad99d7742dd7faf, type: 2}
+  - {fileID: 11400000, guid: a4880cd9b26d6644293d830790c9ad75, type: 2}
+  - {fileID: 11400000, guid: dfd66e0544e74ab41b390247113d4f81, type: 2}
+  - {fileID: 11400000, guid: 265302e3d6259a64da008b7d68da0502, type: 2}
+  - {fileID: 11400000, guid: 3d0ee1700f1f5e6439145e0e632ecb59, type: 2}
+  - {fileID: 11400000, guid: e6a8567e3262d494ab755361a7bf54ec, type: 2}
+  - {fileID: 11400000, guid: 6cb60ddaa15e4aa47a5a9e7ba1f32350, type: 2}
+  - {fileID: 11400000, guid: 04c47c84f3a2ea742876a21e09141b38, type: 2}
+  - {fileID: 11400000, guid: 1b541f6f54f412e41b3143ad1b6043de, type: 2}
+  - {fileID: 11400000, guid: 29c5196e076656d4cae708f908e698fd, type: 2}
+  - {fileID: 11400000, guid: 8129a0f377443ad46a1cc027d5c4ba7b, type: 2}

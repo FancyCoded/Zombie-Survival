@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868acbf782f8a2e49a99df723442adcf, type: 3}
+  m_Name: M4A1S
+  m_EditorClassIdentifier: 
+  _name: M4A1-S
+  _icon: {fileID: 21300000, guid: 1b0bc1fb7629f144b8bd192483a076ce, type: 3}
+  _itemTemplate: {fileID: 3290915307512143414, guid: d97d080e9a5142443b8df3dd9881056b,
+    type: 3}
+  _weight: 0
+  _cost: 500
+  _holdType: 1
+  _type: 2
+  _ammunitionType: 2
+  _shootType: 1
+  _shootDelay: 0.117
+  _damage: 16
+  _shootRange: 130
+  _magazineSize: 30
+  _ammunitionProperties: {fileID: 11400000, guid: e6a8567e3262d494ab755361a7bf54ec,
+    type: 2}
+  _shootSound: {fileID: 8300000, guid: 6a1d8a3225e9be141bfbad3f659d2c71, type: 3}
+  _reloadSound: {fileID: 8300000, guid: a581174274f9cff40a2cce6d9bec255f, type: 3}
+  _meatHitEffect: {fileID: 8102901703044694435, guid: b645918a1bb9dd145a15d82f576cbb9e,
+    type: 3}
+  _woodHitEffect: {fileID: 1000011190285628, guid: beb3acff7ab73944fb8f470f24d74ed3,
+    type: 3}
+  _metalHitEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
+    type: 3}
+  _sandHitEffect: {fileID: 1000012142692022, guid: a475880e7da0e9548aa05cb7933752cd,
+    type: 3}
+  _stoneHitEffect: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980,
+    type: 3}
+  _barrelHitEffect: {fileID: 1000011439201316, guid: a60a75fdadab5de428529a5b8ef0426a,
+    type: 3}

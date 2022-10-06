@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Configuration/Scripts/AmmunitionProperties.cs.meta
+guid: 6d124044219310147951c8dcabf3abf0
+========
+guid: 20c42670fa7d8b749b76f93628c5741b
+>>>>>>>> newInventory:Assets/Scripts/Configuration/Scripts/WaveProperties.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

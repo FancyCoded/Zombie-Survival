@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Pool/AmmunitionPool.cs.meta
+guid: fdc0d4e535082f641a5467f5e6abaaac
+========
+guid: 6b94f1a8cdb831f4ab2b53692d06e535
+>>>>>>>> newInventory:Assets/Scripts/Configuration/Scripts/HealerProperties.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

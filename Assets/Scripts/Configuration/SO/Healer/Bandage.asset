@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc0d4e535082f641a5467f5e6abaaac, type: 3}
+  m_Name: Bandage
+  m_EditorClassIdentifier: 
+  _name: Bandage
+  _icon: {fileID: 21300000, guid: 42e108007cc68b54a9c32afaa55f66b1, type: 3}
+  _itemTemplate: {fileID: 5796440832604099223, guid: f09ed2db421b9f24fa698fb97eaeb6e3,
+    type: 3}
+  _weight: 2
+  _cost: 80
+  _treatHealth: 15
+  _healDelay: 0
+  _healStep: 0

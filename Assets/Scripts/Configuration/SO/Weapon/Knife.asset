@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e14716d6e6fa7b468b45383101021b8, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  _name: Survival Knife
+  _icon: {fileID: 21300000, guid: 38d76ba158a25044286452847bef7884, type: 3}
+  _itemTemplate: {fileID: 8429978652229368686, guid: 36d24d2aac39ff44592672407874ebd0,
+    type: 3}
+  _weight: 0
+  _cost: 180
+  _type: 0
+  _holdType: 2
+  _meatHitSound: {fileID: 8300000, guid: 544de6f7d3008904f84f7d4244449c48, type: 3}
+  _damage: 50
+  _hitDuration: 1

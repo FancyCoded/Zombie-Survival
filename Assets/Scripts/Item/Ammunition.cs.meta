@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Item/Ammunition.cs.meta
+guid: 72afc05c46933ff42aaf118baf3e37fc
+========
+guid: 9c68c8ebc0d7d6c47b392c18ba2e3f63
+>>>>>>>> newInventory:Assets/Scripts/Configuration/Scripts/BulletProperties.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Item.meta
+guid: 4e19f6fa238848c41af40d8e31a0e524
+========
+guid: 06dde6cde70e0f7409f2a73c501061da
+>>>>>>>> newInventory:Assets/Materials/Building.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

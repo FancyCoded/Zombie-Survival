@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Configuration/SO/Ammunition/5.56.asset.meta
+guid: 68622fe7dd4d95a47a18c5bec5bd54f0
+========
+guid: a912453c4cb7e2243aea901841a33169
+>>>>>>>> newInventory:Assets/Materials/Fog.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

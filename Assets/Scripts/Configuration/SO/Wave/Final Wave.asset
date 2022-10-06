@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d124044219310147951c8dcabf3abf0, type: 3}
+  m_Name: Final Wave
+  m_EditorClassIdentifier: 
+  _ammo556Count: 3
+  _ammo45Count: 1
+  _ammo762Count: 3
+  _aidKitCount: 1
+  _painkillerCount: 2
+  _bandageCount: 3
+  _energyDrinkCount: 3
+  _weaponAKMCount: 0
+  _weaponM4A4Count: 1
+  _weaponM4A1SCount: 0
+  _weaponColtCount: 0
+  _weaponKnifeCount: 0
+  _zombieRomeroCount: 15
+  _zombieGirlCount: 10
+  _zombiePoliceCount: 15
+  _zombieMaynardCount: 10
+  _zombieSkeletonBossCount: 1
+  _zombieSpawnDelay: 10
+  _startDelay: 70
