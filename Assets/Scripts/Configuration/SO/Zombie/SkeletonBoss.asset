@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombieType: 3
   _health: 600
-  _attackDelay: 4
-  _damage: 60
-  _secondsBeforeDamage: 1.5
+  _attackDelay: 3
+  _damage: 2
+  _secondsBeforeDamage: 1
   _secondsBeforeDestroy: 7
   _reward: 0

@@ -16,6 +16,6 @@ MonoBehaviour:
   _health: 100
   _attackDelay: 3
   _damage: 35
-  _secondsBeforeDamage: 0.8
+  _secondsBeforeDamage: 1
   _secondsBeforeDestroy: 4
   _reward: 50

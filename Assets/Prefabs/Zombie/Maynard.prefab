@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb420c860eb36a4c937944816722112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDelay: 0.8
+  _collisionDelay: 1
 --- !u!1 &78934616993057417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2433,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 500
-  m_StoppingDistance: 1.1
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
