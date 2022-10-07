@@ -9,9 +9,9 @@ public class TraderPathFinder : MonoBehaviour
 
     private void OnEnable()
     {
-        _waveGenerator.WaveEnded += OnWaveEnded;
-        _waveGenerator.WaveStarted += OnWaveStarted;
-        _playerInput.TraderFound += OnTraderFound;
+        _waveGenerator.WaveEnded -= OnWaveEnded;
+        _waveGenerator.WaveStarted -= OnWaveStarted;
+        _playerInput.TraderFound -= OnTraderFound;
     }
 
     private void OnDisable()

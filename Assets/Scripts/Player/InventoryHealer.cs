@@ -17,7 +17,7 @@ public partial class PlayerInventory : MonoBehaviour
             _items.Remove(name);
 
         _audioSource.PlayOneShot(_takeHealSound);
-        InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+        InventoryWeightChanged?.Invoke(GetInventoryWeight());
     }
 
     private void AddHealer(Healer healer) 

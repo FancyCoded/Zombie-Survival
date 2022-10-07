@@ -23,9 +23,9 @@ public class MusicTracker : MonoBehaviour
 
     private void OnDisable()
     {
-        _waveGenerator.WaveDelayStarted += OnWaveDelayStarted;
-        _waveGenerator.WaveStarted += OnWaveStarted;
-        _waveGenerator.GameEnded += OnGameEnded;
+        _waveGenerator.WaveDelayStarted -= OnWaveDelayStarted;
+        _waveGenerator.WaveStarted -= OnWaveStarted;
+        _waveGenerator.GameEnded -= OnGameEnded;
     }
 
     private void OnGameEnded() => _audioSource.Stop();

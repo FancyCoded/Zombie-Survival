@@ -30,7 +30,7 @@ public partial class PlayerInventory : MonoBehaviour
     [SerializeField] private AudioClip _dropSound;
     [SerializeField] private AudioClip _takeHealSound;
     [SerializeField] private List<Item> _itemsInPickUpField = new List<Item>();
-    [SerializeField] private int _maxCapacity;
+    [SerializeField] private int _maxWeight;
 
     private Player _player;
     private PlayerIK _playerIK;
@@ -51,7 +51,7 @@ public partial class PlayerInventory : MonoBehaviour
     public Weapon SecondWeapon => _secondWeapon;
     public Weapon MeleeWeapon => _meleeWeapon;
     public Weapon CurrentWeapon => _currentWeapon;
-    public int MaxCapacity => _maxCapacity;
+    public int MaxWeight => _maxWeight;
 
     public UnityAction<List<Item>> UpdatePickUpField;
 
@@ -66,7 +66,7 @@ public partial class PlayerInventory : MonoBehaviour
     public UnityAction<string, int> ItemUsed;
     public UnityAction OnItemTraded;
 
-    public UnityAction<int> InventoryCapacityChanged;
+    public UnityAction<int> InventoryWeightChanged;
     public UnityAction<ItemProperties> MoneyIncame;
     
     private void OnEnable()
@@ -84,6 +84,7 @@ public partial class PlayerInventory : MonoBehaviour
         _inventoryView.ItemDropped -= OnItemDropped;
         _inventoryView.WeaponDropped -= OnWeaponDropped;
         _inventoryView.HealerUsed -= OnHealerUsed;
+        _inventoryView.ItemSold -= OnItemSold;
         _pickUpField.ItemInPickUpField -= OnItemInPickUpField;
         _pickUpField.ItemOutPickUpField -= OnItemOutPickUpField;
     }
@@ -99,19 +100,19 @@ public partial class PlayerInventory : MonoBehaviour
         UnarmPlayer();
     }
 
-    public int GetInventoryCapacity()
+    public int GetInventoryWeight()
     {
-        int capacity = 0;
+        int weight = 0;
 
         foreach (var cell in _items.Values)
         {
             if (cell.Item is Ammunition ammunition)
-                capacity += cell.ItemCount * ammunition.Properties.Weight;
+                weight += cell.ItemCount * ammunition.Properties.Weight;
             if (cell.Item is Healer healer)
-                capacity += cell.ItemCount * healer.Properties.Weight;
+                weight += cell.ItemCount * healer.Properties.Weight;
         }
 
-        return capacity;
+        return weight;
     }
 
     public void DropItemToInventory(Item item)
@@ -122,26 +123,26 @@ public partial class PlayerInventory : MonoBehaviour
             AddAmmunition(ammunition);
 
         _audioSource.PlayOneShot(_pickUpSound);
-        InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+        InventoryWeightChanged?.Invoke(GetInventoryWeight());
         OnItemOutPickUpField(item);
     }
 
     public void TryAddItem(Item item, RaycastHit hit)
     {
-        bool isEnoughCapacity = false;
+        bool isEnoughWeight = false;
 
         if (item is Healer healer)
-            if (IsEnoughCapacity(healer.Properties.Weight, out isEnoughCapacity))
+            if (IsEnoughInventoryWeight(healer.Properties.Weight, out isEnoughWeight))
                 AddHealer(healer);
 
         if (item is Ammunition ammunition)
-            if (IsEnoughCapacity(ammunition.Properties.Weight, out isEnoughCapacity))
+            if (IsEnoughInventoryWeight(ammunition.Properties.Weight, out isEnoughWeight))
                 AddAmmunition(ammunition);
 
-        if (isEnoughCapacity)
+        if (isEnoughWeight)
         {
             _audioSource.PlayOneShot(_pickUpSound);
-            InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+            InventoryWeightChanged?.Invoke(GetInventoryWeight());
             OnItemOutPickUpField(item);
             hit.collider.gameObject.SetActive(false);
         }
@@ -157,9 +158,9 @@ public partial class PlayerInventory : MonoBehaviour
         OnItemTraded?.Invoke();
     }
 
-    public bool IsEnoughCapacity(float weight, out bool isEnough)
+    public bool IsEnoughInventoryWeight(float weight, out bool isEnough)
     {
-        isEnough = GetInventoryCapacity() + weight <= _maxCapacity;
+        isEnough = GetInventoryWeight() + weight <= _maxWeight;
         return isEnough;
     }
 
@@ -199,7 +200,7 @@ public partial class PlayerInventory : MonoBehaviour
             ReduceAmmunitionCount(ammunition);
 
         _audioSource.PlayOneShot(_dropSound);
-        InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+        InventoryWeightChanged?.Invoke(GetInventoryWeight());
         MoneyIncame?.Invoke(itemProperties);
         OnItemTraded?.Invoke();
     }
@@ -226,7 +227,7 @@ public partial class PlayerInventory : MonoBehaviour
         if (item is Ammunition ammunition)
             AddAmmunition(ammunition);
 
-        InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+        InventoryWeightChanged?.Invoke(GetInventoryWeight());
         item.gameObject.SetActive(false);
         _audioSource.PlayOneShot(_pickUpSound);
     }
@@ -250,7 +251,7 @@ public partial class PlayerInventory : MonoBehaviour
         }
 
         _audioSource.PlayOneShot(_dropSound);
-        InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+        InventoryWeightChanged?.Invoke(GetInventoryWeight());
         UpdatePickUpField?.Invoke(_itemsInPickUpField);
     }
 

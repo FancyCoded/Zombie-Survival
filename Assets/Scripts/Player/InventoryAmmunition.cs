@@ -7,7 +7,7 @@ public partial class PlayerInventory : MonoBehaviour
         _items[name].ReduceCount(1);
         WeaponAmmunitionsCountChanged?.Invoke(_items[name].ItemCount);
         ItemUsed?.Invoke(name, _items[name].ItemCount);
-        InventoryCapacityChanged?.Invoke(GetInventoryCapacity());
+        InventoryWeightChanged?.Invoke(GetInventoryWeight());
         
         if (_items[name].ItemCount == 0)
             _items.Remove(name);

@@ -23,13 +23,13 @@ public class PlayerWeaponHitMarker : MonoBehaviour
             if (_startCollisionDelay != null)
                 StopCoroutine(_startCollisionDelay);
 
-            _startCollisionDelay = StartCollisionDealy();
+            _startCollisionDelay = StartCollisionDelay();
             StartCoroutine(_startCollisionDelay);
         }
 
     }
 
-    private IEnumerator StartCollisionDealy()
+    private IEnumerator StartCollisionDelay()
     {
         WaitForSeconds seconds = new WaitForSeconds(_collisionDelay);
 

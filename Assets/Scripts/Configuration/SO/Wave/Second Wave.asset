@@ -24,10 +24,10 @@ MonoBehaviour:
   _weaponM4A1SCount: 0
   _weaponColtCount: 1
   _weaponKnifeCount: 0
-  _zombieRomeroCount: 20
-  _zombieGirlCount: 15
-  _zombiePoliceCount: 10
-  _zombieMaynardCount: 0
-  _zombieSkeletonBossCount: 0
+  _zombieRomeroCount: 10
+  _zombieGirlCount: 5
+  _zombiePoliceCount: 5
+  _zombieMaynardCount: 5
+  _zombieSkeletonBossCount: 1
   _zombieSpawnDelay: 8
-  _startDelay: 50
+  _startDelay: 35

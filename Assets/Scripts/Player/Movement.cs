@@ -69,7 +69,9 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         _sphereCastRadius = _capsuleCollider.radius;
-        _footstepSwapper.CheckLayers();
+
+        if (_footstepSwapper.IsLayerChanged(out FootstepCollection footstepCollection))
+            SwapFootstepsCollection(footstepCollection);
     }
 
     private void FixedUpdate()
@@ -94,12 +96,12 @@ public class Movement : MonoBehaviour
         _rigidbody.AddRelativeForce(_playerMove, ForceMode.Force);
     }
 
-    public void SwapFootsteps(FootstepCollection collection)
+    private void SwapFootstepsCollection(FootstepCollection footstepCollection)
     {
         _footstepSounds.Clear();
 
-        for (int i = 0; i < collection.FootstepSounds.Length; i++)
-            _footstepSounds.Add(collection.FootstepSounds[i]);
+        for (int i = 0; i < footstepCollection.FootstepSounds.Length; i++)
+            _footstepSounds.Add(footstepCollection.FootstepSounds[i]);
     } 
 
     private void Move()
@@ -162,7 +164,8 @@ public class Movement : MonoBehaviour
     // Animation event
     private void PlayFootstepSound()
     {
-        _footstepSwapper.CheckLayers();
+        if (_footstepSwapper.IsLayerChanged(out FootstepCollection footstepCollection))
+            SwapFootstepsCollection(footstepCollection);
 
         if (_isGrounded == false)
             return;

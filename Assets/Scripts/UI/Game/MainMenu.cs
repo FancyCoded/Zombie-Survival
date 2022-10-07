@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,14 +11,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button _settings;
     [SerializeField] private Button _exit;
 
-    private BaseEventData ButtonSelected;
-
     private void OnEnable()
     {
         _start.onClick.AddListener(OnStartButtonClicked);
         _settings.onClick.AddListener(OnOptionsButtonClicked);
         _exit.onClick.AddListener(OnExitButtonClicked);
-        _exit.OnSelect(ButtonSelected);
         _settingsMenu.SettingsExitButtonClicked += OnSettingsExitButtonClicked;
     }
     

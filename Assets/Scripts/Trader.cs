@@ -35,7 +35,7 @@ public class Trader : MonoBehaviour
     {
         _waveGenerator.WaveStarted -= OnWaveStarted;
         _waveGenerator.WaveEnded -= OnWaveEnded;
-        _traderView.TradingEnded += OnTradingEnded;
+        _traderView.TradingEnded -= OnTradingEnded;
     }
 
     public void Open(Player player)
@@ -56,7 +56,7 @@ public class Trader : MonoBehaviour
             {
                 if (IsEnoughPlayerMoney(i))
                 {
-                    if (isEnoughPlayerInventoyCapacity(itemProperties))
+                    if (isEnoughPlayerInventoyWeight(itemProperties))
                     {
                         _player.Wallet.SpendMoney(itemProperties);
 
@@ -87,8 +87,8 @@ public class Trader : MonoBehaviour
         _player = null;
     }
 
-    private bool isEnoughPlayerInventoyCapacity(ItemProperties itemProperties) =>
-        _player.Inventory.IsEnoughCapacity(itemProperties.Weight, out bool isEnough);
+    private bool isEnoughPlayerInventoyWeight(ItemProperties itemProperties) =>
+        _player.Inventory.IsEnoughInventoryWeight(itemProperties.Weight, out bool isEnough);
 
     private bool IsContain(string name, int itemIndex) =>
         _traderStorage.Items[itemIndex].Name == name;

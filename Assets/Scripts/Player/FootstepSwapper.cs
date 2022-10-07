@@ -16,8 +16,11 @@ public class FootstepSwapper : MonoBehaviour
         _terrainChecker = new TerrainChecker();
     }
 
-    public void CheckLayers()
+    public bool IsLayerChanged(out FootstepCollection collection)
     {
+        collection = null;
+        string lastLayerName = _currentLayerName;
+       
         RaycastHit hit;
         float rayCastMotionDistance = _movement.CapsuleCollider.bounds.extents.y + _groundCheckDistance;
 
@@ -31,15 +34,17 @@ public class FootstepSwapper : MonoBehaviour
 
                     for (int i = 0; i < _footstepCollections.Length; i++)
                         if (_currentLayerName == _footstepCollections[i].name)
-                            _movement.SwapFootsteps(_footstepCollections[i]);
+                            collection = _footstepCollections[i];
                 }
             }
 
             if(hit.transform.TryGetComponent(out SurfaceType surfaceType))
             {
                 _currentLayerName = surfaceType.FootstepCollection.name;
-                _movement.SwapFootsteps(surfaceType.FootstepCollection);
+                 collection = surfaceType.FootstepCollection;
             }
         }
+
+        return lastLayerName != _currentLayerName;
     }
 }

@@ -19,6 +19,9 @@ public class Wallet : MonoBehaviour
     private void OnEnable() =>
         _playerInventory.MoneyIncame += OnMoneyIncome;
 
+    private void OnDisable() => 
+        _playerInventory.MoneyIncame -= OnMoneyIncome;
+
     private void Start() => MoneyChanged?.Invoke(_money);
 
     public void OnRewarded(int reward)

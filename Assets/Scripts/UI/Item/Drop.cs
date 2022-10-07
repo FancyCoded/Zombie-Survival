@@ -34,14 +34,14 @@ public class Drop : MonoBehaviour, IDropHandler
 
     private void TryDropItemToInventory()
     {
-        bool isEnoughCapacity = false;
+        bool isEnoughWeight = false;
 
         if (_drag.Item is Ammunition ammunition)
-            _playerInventory.IsEnoughCapacity(ammunition.Properties.Weight, out isEnoughCapacity);
+            _playerInventory.IsEnoughInventoryWeight(ammunition.Properties.Weight, out isEnoughWeight);
         if (_drag.Item is Healer healer)
-            _playerInventory.IsEnoughCapacity(healer.Properties.Weight, out isEnoughCapacity);
+            _playerInventory.IsEnoughInventoryWeight(healer.Properties.Weight, out isEnoughWeight);
 
-        if (isEnoughCapacity)
+        if (isEnoughWeight)
             DropItem();
     }
 

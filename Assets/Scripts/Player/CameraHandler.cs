@@ -15,15 +15,13 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private float _lerpTimeMyltiplyer = 100;
     [SerializeField] private bool _isLeftPivot;
 
-    private float _mouseX;
-    private float _mouseY;
-    private float _smoothX;
-    private float _smoothY;
-    private float _smoothXVelocity;
-    private float _smoothYVelocity;
     private float _lookAngle; 
     private float _tiltAngle;
     private bool _isHandled = true;
+
+    private Vector2 _smooth;
+    private Vector2 _mouse;
+    private Vector2 _smoothVelocity; 
 
     public bool IsHandled => _isHandled;
 
@@ -45,9 +43,9 @@ public class CameraHandler : MonoBehaviour
 
     private void HandlePosition()
     {
-        float targetX = _cameraStatus.NormalX;
-        float targetY = _cameraStatus.NormalY;
-        float targetZ = _cameraStatus.NormalZ;
+        float targetX = _cameraStatus.NormalPosition.x;
+        float targetY = _cameraStatus.NormalPosition.y;
+        float targetZ = _cameraStatus.NormalPosition.z;
 
         if (_player.IsAiming)
         {
@@ -67,37 +65,25 @@ public class CameraHandler : MonoBehaviour
 
     private void HandleRotation()
     {
-        _mouseX = Input.GetAxis(MouseX);
-        _mouseY = Input.GetAxis(MouseY);
+        _mouse = new Vector2(Input.GetAxis(MouseX), Input.GetAxis(MouseY));
 
         if (_cameraStatus.SmoothTime > 0)
         {
-            _smoothX = Mathf.SmoothDamp(_smoothX, _mouseX, ref _smoothXVelocity, _cameraStatus.SmoothTime);
-            _smoothY = Mathf.SmoothDamp(_smoothY, _mouseY, ref _smoothYVelocity, _cameraStatus.SmoothTime);
+            _smooth.x = Mathf.SmoothDamp(_smooth.x, _mouse.x, ref _smoothVelocity.x, _cameraStatus.SmoothTime);
+            _smooth.y = Mathf.SmoothDamp(_smooth.y, _mouse.y, ref _smoothVelocity.y, _cameraStatus.SmoothTime);
         }
         else
         {
-            _smoothX = _mouseX;
-            _smoothY = _mouseY;
+            _smooth.x = _mouse.x;
+            _smooth.y = _mouse.y;
         }
 
-        _lookAngle += _smoothX * _cameraStatus.XRotationSpeed;
+        _lookAngle += _smooth.x * _cameraStatus.RotationSpeed.x;
         Quaternion targetRotation = Quaternion.Euler(0, _lookAngle, 0);
         _holderTransform.rotation = targetRotation;
 
-        _tiltAngle -= _smoothY * _cameraStatus.YRotationSpeed;
+        _tiltAngle -= _smooth.y * _cameraStatus.RotationSpeed.y;
         _tiltAngle = Mathf.Clamp(_tiltAngle, _cameraStatus.MinAngle, _cameraStatus.MaxAngle);
         _pivot.localRotation = Quaternion.Euler(_tiltAngle, 0, 0);
     } 
-
-    private void SetTargetLook()
-    {
-        Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
-        RaycastHit hit;
-
-        float time = Time.deltaTime * _lerpTimeMyltiplyer;
-
-        if (Physics.Raycast(ray, out hit))
-            _targetLook.position = Vector3.Lerp(_targetLook.position, hit.point, time);
-    }
 }

@@ -11672,9 +11672,6 @@ MonoBehaviour:
   _waves:
   - _properties: {fileID: 11400000, guid: 0a24d8eef9e7858458cbd88e0accb7e9, type: 2}
   - _properties: {fileID: 11400000, guid: b1e01cfe972a4af478b6ae87f9d17d5f, type: 2}
-  - _properties: {fileID: 11400000, guid: 4ab34ce627b9e3343bc017eac26f5161, type: 2}
-  - _properties: {fileID: 11400000, guid: 602eab46edf1aab468fe849832fbdaad, type: 2}
-  - _properties: {fileID: 11400000, guid: 2240009668ca6f04b8928811aeaced7e, type: 2}
 --- !u!4 &1089855610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7211380264534188751, guid: 423017a9912abfb42b7645ca7f22bb88,
@@ -28091,6 +28088,10 @@ PrefabInstance:
       propertyPath: _waveGenerator
       value: 
       objectReference: {fileID: 1089647020}
+    - target: {fileID: 1129075677, guid: ceb57cd25ba644742aa7852f7f00a4ca, type: 3}
+      propertyPath: _money
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4759891071614925133, guid: ceb57cd25ba644742aa7852f7f00a4ca,
         type: 3}
       propertyPath: m_Name

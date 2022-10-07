@@ -51,7 +51,7 @@ public partial class InventoryView : MonoBehaviour
         _playerInventory.ItemCountChanged += OnItemCountChanged;
         _playerInventory.ItemDropped += OnItemDropped;
         _playerInventory.ItemUsed += OnItemUsed;
-        _playerInventory.InventoryCapacityChanged += OnInventoryCapacityChanged;
+        _playerInventory.InventoryWeightChanged += OnInventoryWeightChanged;
         _playerInventory.OnItemTraded += TradingViewUpdate;
     }
 
@@ -64,7 +64,7 @@ public partial class InventoryView : MonoBehaviour
         _playerInventory.ItemCountChanged -= OnItemCountChanged;
         _playerInventory.ItemDropped -= OnItemDropped;
         _playerInventory.ItemUsed -= OnItemUsed;
-        _playerInventory.InventoryCapacityChanged -= OnInventoryCapacityChanged;
+        _playerInventory.InventoryWeightChanged -= OnInventoryWeightChanged;
         _playerInventory.OnItemTraded -= TradingViewUpdate;
     }
 
@@ -72,8 +72,8 @@ public partial class InventoryView : MonoBehaviour
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         SetCanvasGroup(0, false, false);
-        _inventoryMaxWeight.text = _playerInventory.MaxCapacity.ToString();
-        _tradingInventoryMaxWeight.text = _playerInventory.MaxCapacity.ToString();
+        _inventoryMaxWeight.text = _playerInventory.MaxWeight.ToString();
+        _tradingInventoryMaxWeight.text = _playerInventory.MaxWeight.ToString();
     }
 
     public bool IsInteractable() => _canvasGroup.interactable || _traderView.interactable;
@@ -124,10 +124,10 @@ public partial class InventoryView : MonoBehaviour
             _items[name].Drag.ChangeCount(itemCount);
     }
 
-    private void OnInventoryCapacityChanged(int capacity)
+    private void OnInventoryWeightChanged(int weight)
     {
-        _inventoryCurrentWeight.text = capacity.ToString();
-        _tradingInventoryCurrentWeight.text = capacity.ToString();
+        _inventoryCurrentWeight.text = weight.ToString();
+        _tradingInventoryCurrentWeight.text = weight.ToString();
     }
 
     private void OnItemDropped(Item item)
